@@ -1,0 +1,270 @@
+body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+header {
+    width: 100%;
+    height: 89px;
+    height: 10%;
+}
+header>img {
+    display: block;
+    float: left;
+    width: 290.585px;
+    height: 89px;
+    margin-left: 25px;
+}
+section {
+    height: 90%;
+    width: 801px;
+    margin: 0 auto;
+}
+section>div {
+    width: 100%;
+    height: 642px;
+    position: absolute;
+    top: 50%;
+    margin-top: -321px;
+    background-size: 100%;
+}
+section>div>div {
+    position: absolute;
+    width: 801px;
+    height: 642px;
+    top: 0;
+    left: 0;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+section  * {
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.login-container {
+    background: url(../images/login_input_background.png) center center no-repeat;
+}
+.register-container {
+    background: url(../images/register_input_background.png) center center no-repeat;
+}
+.mode-container-unrotated {
+    transform: rotateY(0deg);
+}
+.mode-container-rotated {
+    transform: rotateY(180deg);
+}
+.login-container>div,.register-container>div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 617px;
+    height: 482px;
+    background-color: #fff;
+    box-shadow: 0 0 40px 0 rgba(61, 144, 245, .4);
+    backface-visibility: hidden;
+}
+.input-container-unrotated {
+    transform: translate(-308.5px, -241px) rotateY(0deg);
+}
+.input-container-rotated {
+    transform: translate(-308.5px, -241px) rotateY(180deg);
+}
+.switch-container {
+    float: right;
+    width: 280px;
+    height: 89px;
+    font-size: 24px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.switch-container>div {
+    position: relative;
+    float: left;
+    width: 140px;
+}
+.switch-container>div>span {
+    display: block;
+    cursor: pointer;
+    color: #3d90f5;
+    margin-top: 28.5px;
+    text-align: center;
+}
+.login-input-container input, .register-container input {
+    display: block;
+    margin: 8px auto;
+    width: 400px;
+    height: 48px;
+    border-radius: 8px;
+    border: 4px solid rgba(61, 144, 245, .5);
+    font-size: 20px;
+    text-indent: 10px;
+    color: #424242;
+}
+.login-input-container input:focus,.register-container input:focus {
+    border: 4px solid #3D90F5;
+}
+.login-input-container label, .register-container label {
+    display: block;
+    font-size: 20px;
+    margin-top: 19.6px;
+    margin-left: 110px;
+    color: #424242;
+}
+.register-container label:first-child {
+    margin-top: 30px;
+}
+.login-input-container button,.register-input-container button {
+    display: block;
+    width: 400px;
+    height: 56px;
+    border-radius: 8px;
+    background-color: #3d90f5;
+    color: white;
+    margin: 48px auto;
+    font-size: 22px;
+}
+.login-input-container button:hover,.register-input-container button:hover {
+    background-color: rgba(61, 144, 245, .6)!important;
+}
+.login-first-label {
+    margin-top: 80px!important;
+}
+.switch-layer {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 120px;
+    height: 0px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    background-color: #3d90f5;
+    overflow: hidden;
+    transition: height .5s ease;
+}
+.switch-container-animate {
+    height: 68px;
+}
+.switch-layer>span {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 28.5px;
+    text-align: center;
+    color: white;
+}
+/* 提示的样式 */
+.tips {
+    position: absolute;
+    font-size: 12px;
+    background-color: white;
+    border-radius: 4px;
+    width: 130px;
+    height: 35px;
+    z-index: 15;
+    left: 600px;
+    opacity: 0;
+}
+.tips-active {
+    opacity: 1;
+}
+.tips div {
+    position: absolute;
+    z-index: 11;
+    line-height: 35px;
+    width: 130px;
+    height: 35px;
+    text-align: center;
+    color: #1f1f1f;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 4px 2px rgba(66, 66, 66, .2);
+}
+.tips::after,.tips::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    background-color: #fff;
+}
+.transverse-tips {
+    width: 60px;
+    height: 25px;
+}
+/* .tips div {
+    
+} */
+.transverse-tips::before {
+    right: 56px;
+    top: 13.5px;
+    z-index: 10;
+    box-shadow: 0 0 4px 2px rgba(66, 66, 66, .2);
+}
+.transverse-tips::after {
+    right: 56px;
+    top: 13.5px;
+    z-index: 12;
+}
+.login-userName-tip {
+    top: 206.5px;
+}
+.login-password-tip {
+    top: 318.5px;
+}
+.register-userName-tip {
+    top: 155.5px;
+}
+.register-name-tip {
+    top: 268.5px;
+}
+.register-password-tip {
+    top: 381.5px;
+}
+/* 浮出层 */
+.float-tips-layer {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(138, 138, 138, .5);
+}
+.float-tips-layer * {
+    transition: all .75s ease;
+}
+.float-tips-layer>div {
+    width: 350px;
+    height: 184px;
+    margin: 250px auto;
+    border-radius: 12px;
+    background-color: #fff;
+    overflow: hidden;
+    opacity: 0;
+}
+.fadeIn {
+    opacity: 1!important;
+}
+.float-tips-layer>div>span {
+    display: block;
+    width: 100%;
+    height: 25px;
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+.float-tips-layer>div>button {
+    display: block;
+    width: 160px;
+    height: 48px;
+    margin: 45px auto;
+    border-radius: 8px;
+    background-color: #3d90f5;
+    color: #1f1f1f;
+    color: white;
+}
+.float-tips-layer>div>button:hover {
+    background-color: rgba(61, 144, 245, .6);
+}

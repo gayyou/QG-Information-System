@@ -1,0 +1,113 @@
+/*
+初始化css
+*/
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,textarea,select,button{margin:0; padding:0;} 
+body {
+    font-size: 15px;
+    font-family: 'Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","å¾®è½¯é›…é»‘",Arial,sans-serif';   
+    font-weight: 500;
+    color: #000000;
+}
+a {
+    text-decoration:none;
+    resize: none;
+    outline: none;
+    color: #000;
+} 
+em {
+    font-style:normal;
+} 
+li{
+    list-style:none;
+} 
+img{
+    border:0; vertical-align:middle;
+} 
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+} 
+p {
+    word-wrap:break-word;
+}
+input {
+    outline: none;
+    resize: none;
+    border: none 0;
+}
+button {
+    border: none;
+    outline: none;
+    cursor:pointer;             
+}
+/*显示和隐藏*/
+
+.show {
+    display: block !important;
+}
+.hide {
+    display: none !important;
+}
+
+/* 弹出层 */
+.pop-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -12;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    transition: opacity .5s;
+    background: transparent;
+    opacity: 0;
+}
+
+/* 显示弹出层 */
+
+.active-pop {
+    opacity: 1;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, .8);
+}
+.active-pop .pop {
+    transform: translateY(20px);
+}
+.pop {
+    width: 450px;
+    min-height: 200px;
+    height: auto;
+    border-radius: 5px;
+    z-index: 200;
+    background-color: #fff;
+    display: inline-block;
+    margin-top: 35vh;   
+    transition: transform .5s;
+}
+.pop-content {
+    font-size: 22px;
+    height: auto;
+    padding: 50px;
+}
+.pop-button-container {
+    height: auto;
+    width: 100%;
+}
+.pop-button {
+    height: 35px;
+    width: 90px;
+    background-color: #0cf;
+    color: #fff;
+    border-radius: 4px;
+    margin:  30px;
+}
+#pop-button-1 {
+    background: rgb(209, 13, 13);
+}
+
+/* flex布局样式 */
+
+.flex-box {
+    display: flex;
+}
+

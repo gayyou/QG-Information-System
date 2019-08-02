@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QG信息管理系统</title>
+    <!-- 360 使用Google Chrome Frame -->
+    <meta name="renderer" content="webkit">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 开启响应式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO页面关键词 -->
+    <meta name="keywords" content="your keywords">
+    <!-- SEO页面描述 -->
+    <meta name="description" content="your description">
+    <!-- favicon，可更改图片类型 -->
+    <link rel="shortcut icon"  />
+    <!-- 引入预设css -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <!-- < 引入css > -->
+    <link rel="stylesheet" href="../styles/index.css">
+    <!-- 引入工具类js文件 -->
+    <script src="../srcipts/util.js"></script>
+    <!-- < 引入jQuery文件 > -->
+    <script src="../srcipts/jquery-3.3.1.min.js"></script>
+    <!-- < 引入xlsx.core文件，对excel表格进行读取预览 > -->
+    <script src="../srcipts/xlsx.core.min.js"></script>
+</head>
+<body>
+    <div class="root">
+        <header class="root-header">
+            <div class="logo-container">
+                <a href="javascript:"><img src="../images/logo/transverse_platform.png" alt=""></a>
+            </div>
+            <div class="search-input-container">
+                <input type="text" id="search-input" placeholder="搜索">
+                <a id="search-button" href="javascript:">
+                    <img src="../images/icon/icon_search_normal.png" >
+                </a>
+            </div>
+            <ul class="header-ul">
+                <li data-index="0"><a href="javascript:">所获奖项</a><div class="li-hover"></div></li>
+                <li data-index="1"><a href="javascript:">成员信息</a><div class="li-hover"></div></li>
+                <li id="import-export" data-index="2"><a href="javascript:">导入导出</a><div class="li-hover"></div></li>
+                <li id="auditing-user" data-index="3"><a href="javascript:">审核用户</a><div class="li-hover"></div></li>
+            </ul>
+            <a href="javascript:" id="user-name">用户名</a>
+        </header>
+        <nav class="root-nav">
+            <ul class="first-menu"></ul>
+        </nav>
+        <main class="root-main">
+            <section class="part-left">
+                <main class="part-left-main">
+                    <!-- 所获奖项容器 -->
+                    <div class="part prize-container" data-index="0">
+                        <ul>
+                            
+                        </ul>
+                        <div class="more-prize-button-container">
+                            <span></span>
+                            <button id="more-prize-button">点击查看更多</button>
+                        </div>
+                    </div>
+                    <!-- 成员信息容器 -->
+                    <div class="part menber-container" data-index="1">
+                        <ul class="member-information-list-container" group="全部" grade="全部" >
+                            <!-- <li userinfoId='123456' group='嵌入式' grade="2017" url="213213"><img src="../images/logo/studio_logo_information.png"><div><span>邓苏城</span><span>2017届嵌入式组</span></div></li> -->
+                        </ul>
+                        <div class="turn-page-button">点击此加载更多...</div>
+                    </div>
+                    <!-- 导出和导入容器 -->
+                    <div class="part file-container upload-download-container" data-index="2">
+                        <ul class="load-button-container">
+                            <li><div class="load-button-layer"><span>导入奖项</span></div><span>导入奖项</span></li>
+                            <li><div class="load-button-layer"><span>导入成员</span></div><span>导入成员</span></li>
+                            <li><div class="load-button-layer"><span>导出奖项</span></div><span>导出奖项</span></li>
+                            <li><div class="load-button-layer"><span>导出成员</span></div><span>导出成员</span></li>
+                        </ul>
+                        <div class="file-preview-container">
+                            <ul class="file-preview-head">
+                            </ul>
+                            <ul class="file-preview-value">
+                            </ul>
+                        </div>
+                        <div class="file-control-container">
+                            <button>选择文件</button>
+                            <input id="upload-button" type="file">
+                            <button id="upload-submit">开始上传</button>
+                            <button id="cancel-submit">取消上传</button>
+                        </div>
+                    </div>
+                     <!-- 审核页面 -->
+                     <div class="part auditing-container" data-index="3">
+                        <div class="auditing-choice-container">
+                            <span>没有未激活用户</span>
+                            <ul>
+                               
+                            </ul>
+                        </div>
+                        <div class="auditing-submit-container">
+                            <button id="auditing-all-permit">通过</button>
+                            <button id="auditing-all-reject">不通过</button>
+                            <button id="auditing-all-reset">选择重置</button>
+                         </div>
+                    </div>
+                    <!--  搜索页面  -->
+                    <div class="part search-container" data-index="4">
+                        <div class="search-info-list">
+                            <li>
+                                <img src="../images/logo/studio_logo_information.png">
+                                <div>
+                                <span>邓苏城</span>'
+                                <span>2017嵌入式</span>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="search-prize-list">
+                            <ul>
+                            <a href="javascript:">
+                                <div class="prize-img-container">
+                                    <img src="../images/logo/studio_logo_prize.png" class="prize-img">
+                                </div>
+                                <div class="prize-info-container">
+                                    <h1 class="prize-name">广东工业大学</h1>
+                                    <p class="prize-time-container"><span class="prize-time">2017</span></p>
+                                    <p><span class="prize-people">等俗称</span></p>                                
+                                </div>
+                            </a>
+                            </ul>
+                        </div>
+                        <div class="turn-page-button">点击此加载更多...</div>
+                    </div>
+                    <!-- 详细操作页面 -->
+                    <div class="part prize-detail-container" data-index="5">
+                        <div class="prize-detail-container-left">
+                            <div class="prize-detail-img-container">
+                                <img src="" id="prize-detail-img">
+                            </div>
+                            <div class="introduction-container">
+                                <textarea id="introduction" cols="30" rows="10" readonly></textarea>
+                            </div>
+                        </div>
+                        <div class="prize-detail-container-right">
+                            <ul>
+                                <li>
+                                    <label for="">奖项名称</label>
+                                    <div class="prize-input-container">
+                                        <input type="text" class="prize-detail-input" readonly>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">奖项编号</label>
+                                    <div class="prize-input-container">
+                                        <input type="text" class="prize-detail-input" readonly>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">获奖时间</label>
+                                    <div class="prize-input-container">
+                                        <input type="text" class="prize-detail-input" readonly>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">获奖项目</label>
+                                    <div class="prize-input-container">
+                                        <input type="text" class="prize-detail-input" readonly>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">获奖部门</label>
+                                    <div class="prize-input-container">
+                                        <input type="text" class="prize-detail-input" readonly>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">获奖级别</label>
+                                    <div class="prize-input-container" style="margin-right: 10px;">
+                                        <input type="text" style="width: 213px;" class="prize-detail-input" readonly>
+                                    </div>
+                                    <label for="">获奖等级</label>
+                                    <div class="prize-input-container" >
+                                        <input type="text" style="width: 213px;" class="prize-detail-input" readonly>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">指导老师</label>
+                                    <div class="prize-input-container">
+                                        <input type="text" class="prize-detail-input" readonly>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">参赛学生</label>
+                                    <div class="prize-input-container">
+                                        <input type="text" class="prize-detail-input" readonly>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="prize-button-container">
+                                <button>修改</button>
+                                <button>删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  成员详细信息页面  -->
+                    <div class="part info-detail-container" data-index="6">
+                        <div class="info-container">
+                            <div class="info-container-left">
+                                <div class="head-img-container">
+                                    <img src="../images/logo/studio_logo_information.png">
+                                </div>
+                                <div class="info-introduction-container">
+                                    <span>个人简介</span>
+                                    <textarea id="info-introduction"></textarea>
+                                </div>
+                            </div>
+                            <ul class="info-container-right">
+                                <li><label>成员名字</label><input id=""></li>
+                                <li><label>成员组别</label><input id=""></li>
+                                <li><label>所属学院</label><input id=""></li>
+                                <li><label>年级</label><input id=""></li>
+                                <li><label>联系电话</label><input id=""></li>
+                                <li><label>籍贯</label><input id=""></li>
+                                <li><label>QQ账号</label><input id=""></li>
+                                <li><label>常用邮箱</label><input id=""></li>
+                                <div class="info-detail-button-container">
+                                    <button>上传图片</button>
+                                    <input type="file" id="upload-headPic" accept="image/jpg,image/png,image/png">
+                                    <button>确定修改</button>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </main>
+            </section>
+            <section class="part-right">
+                <div class="show-panel-button-container">
+                    <a href="javascript:" id="show-panel-button">
+                        <img src="../images/icon/arrow_left_blue.png" id="arrow">
+                        <span>筛选条件</span>
+                    </a>
+                </div>
+                <!-- 右边面板的展示区域 -->
+                <div class="panel-container">
+                    <!-- 奖项条件查询面板 -->
+                    <div class="panel prize-select-panel">
+                        <div class="prize-select-container">
+                            <span>获奖年份</span>
+                            <div class="select-plugin" tabindex>
+                                <span class="option">所有</span>
+                                <button class="prize-select-button"></button>
+                                <div class="prize-option-container">
+                                    <ul id="date-options">
+                                        <li>所有</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prize-select-container">
+                            <span>获奖级别</span>
+                            <div class="select-plugin" tabindex>
+                                <span class="option">所有</span>
+                                <button class="prize-select-button"></button>
+                            <div class="prize-option-container">
+                                    <ul>
+                                        <li>所有</li>
+                                        <li>省级</li>
+                                        <li>市级</li>
+                                        <li>校级</li>
+                                        <li>学院级</li>
+                                    </ul>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="prize-select-container">
+                            <span>获奖等级</span>
+                            <div class="select-plugin" tabindex>
+                                <span class="option">所有</span>
+                                <button class="prize-select-button"></button>
+                                <div class="prize-option-container">
+                                    <ul>
+                                        <li>所有</li>
+                                        <li>一等奖</li>
+                                        <li>二等奖</li>
+                                        <li>三等奖</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="commit-search-prize-container">
+                            <a href="javascript:" id="commit-search-prize-button">确认</a>
+                            <div class="a-hover"></div>
+                        </div>
+                    </div>
+                    <!-- 成员管理操作面板 -->
+                    <div class="panel">
+                        <div class="info-list-panel">
+                            <div class="condition-container grade-condition-container">
+                                <span>所属年级</span>
+                                <div class="swtich-select-container">
+                                    <span>
+                                        全部
+                                    </span>
+                                    <img src="../images/icon/arrow_down.png">
+                                </div>
+                            </div>
+                            <div class="condition-container major-condition-container">
+                                <span>所属组别</span>
+                                <div class="swtich-select-container">
+                                    <span>
+                                        全部
+                                    </span>
+                                    <img src="../images/icon/arrow_down.png">
+                                </div>
+                            </div>
+                            <div class="info-button-container">
+                                <span>确认</span>
+                                <div class="info-button-layer"><span>确认</span></div>
+                            </div>
+                            <div class="info-select-list grade-select-list">
+                                <ul choice-text="全部">
+                                    <li>全部</li>
+                                    <li>2004</li>
+                                    <li>2005</li>
+                                    <li>2006</li>
+                                    <li>2007</li>
+                                    <li>2008</li>
+                                    <li>2009</li>
+                                    <li>2010</li>
+                                    <li>2011</li>
+                                </ul>
+                            </div>
+                            <div class="info-select-list group-select-list">
+                                <ul choice-text="全部">
+                                    <li>全部</li>
+                                    <li>嵌入式组</li>
+                                    <li>前端组</li>
+                                    <li>后台组</li>
+                                    <li>手游组</li>
+                                    <li>移动组</li>
+                                    <li>数据挖掘组</li>
+                                    <li>设计师组</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div class="float-tips-layer">
+            <div>
+                <span>提示</span>
+                <button>确定</button>
+            </div>
+    </div>
+    <div class="float-confirm-layer">
+            <div>
+                <span>提示</span>
+                <button class="confirm-check" choice="confirm">确定</button>
+                <button choice="cancel">取消</button>
+            </div>
+    </div>
+    <!-- < 引入该页面的js文件 > -->
+    <script src="../srcipts/index.js"></script>
+</body>
+</html>

@@ -1,2 +1,1 @@
-# QG-Information-System
-QG-Information-System
+# QG-Info-Manage-Front

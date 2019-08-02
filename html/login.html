@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QG信息管理系统</title>
+    <!-- 360 使用Google Chrome Frame -->
+    <meta name="renderer" content="webkit">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 开启响应式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO页面关键词 -->
+    <meta name="keywords" content="your keywords">
+    <!-- SEO页面描述 -->
+    <meta name="description" content="your description">
+    <!-- favicon，可更改图片类型 -->
+    <link rel="shortcut icon"  />
+    <!-- 引入预设css -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <!-- < 引入css > -->
+    <link rel="stylesheet" href="../styles/login.css">
+    <!-- 引入工具类js文件 -->
+    <script src="../srcipts/util.js"></script>
+    <!-- < 引入jQuery文件 > -->
+    <script src="../srcipts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <!-- < 头部 > -->
+    <header>
+        <img src="../images/logo/transverse_platform.png">
+        <div class="switch-container">
+            <div id="login-mode">
+                <div class="switch-layer">
+                    <span>登陆</span>
+                </div>
+                <span>登陆</span>
+            </div>
+            <div id="register-mode">
+                <div class="switch-layer">
+                    <span>注册</span>
+                </div>
+                <span>注册</span>
+            </div>
+        </div>
+    </header>
+    <!-- < 中间输入表单那个区域 > -->
+    <section>
+        <div>
+            <div class="login-container mode-container-unrotated">
+                <div class="login-input-container input-container-unrotated">
+                    <label class="login-first-label" for="login-userName">账号</label>
+                    <input type="text" id="login-userName" name="userName" autocomplete="off"/>
+                    <label for="login-password">密码</label>
+                    <input type="password" id="login-password" name="password" autocomplete="off"/>
+                    <button>登陆</button>
+                </div>
+            </div>
+            <div class="register-container mode-container-rotated">
+                <div class="register-input-container input-container-rotated">
+                    <label for="register-userName">账号</label>
+                    <input type="text" id="register-userName" name="userName" autocomplete="off"/>
+                    <label for="register-name">真实姓名</label>
+                    <input type="text" id="register-name" name="name" autocomplete="off"/>
+                    <label for="register-password">密码</label>
+                    <input type="password" id="register-password" name="password" autocomplete="off"/>
+                    <button>注册</button>
+                </div>
+            </div>
+            <div class="tips transverse-tips login-userName-tip">
+                <div></div>
+            </div>
+            <div class="tips transverse-tips login-password-tip">
+                <div></div>
+            </div>
+            <div class="tips transverse-tips register-userName-tip">
+                <div></div>
+            </div>
+            <div class="tips transverse-tips register-name-tip">
+                <div></div>
+            </div>
+            <div class="tips transverse-tips register-password-tip">
+                <div></div>
+            </div>
+        </div>
+    </section>
+    <div class="float-tips-layer">
+        <div>
+            <span>提示</span>
+            <button>确定</button>
+        </div>
+    </div>
+    <!-- < 引入该页面的js文件 > -->
+    <script src="../srcipts/login.js"></script>
+</body>
+</html>
